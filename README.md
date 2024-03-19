@@ -7,3 +7,4 @@
 - [SVGOMG](https://jakearchibald.github.io/svgomg/)
 - [Squoosh.app](https://squoosh.app)
 - [Reference](https://app.pomodorotimer.online/es/)
+- [Animations](https://scroll-driven-animations.style/)
