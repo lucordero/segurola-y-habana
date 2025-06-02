@@ -1,0 +1,21 @@
+---
+// The logo image is expected to be in public/images/logo-syh.png
+const logoUrl = "/images/logo-syh.svg";
+---
+<header class="bg-team-black py-6 sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
+        <div class="flex items-center mb-4 sm:mb-0">
+            <img src={logoUrl || "/placeholder.svg"} alt="Segurola y Habana Logo" class="h-16 w-16 mr-4 rounded-full" />
+            <h1 class="text-3xl sm:text-4xl font-bold text-team-yellow">
+                Segurola y Habana <span class="text-sm text-gray-400 block sm:inline">4310</span>
+            </h1>
+        </div>
+        <nav>
+            <ul class="flex space-x-4 sm:space-x-6">
+                <li><a href="#players" class="text-gray-300 hover:text-team-yellow transition-colors">Jugadores</a></li>
+                <li><a href="#matches" class="text-gray-300 hover:text-team-yellow transition-colors">Partidos</a></li>
+                <li><a href="#results" class="text-gray-300 hover:text-team-yellow transition-colors">Resultados</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

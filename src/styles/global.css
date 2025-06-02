@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+    --font-display: "Inter", "sans-serif";
+
+    --color-team-yellow: #FFD700;
+    --color-team-black: #121212;
+    --color-team-blue: #007BFF;
+}

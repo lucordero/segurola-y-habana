@@ -1,0 +1,33 @@
+---
+// --- How to edit Match Photos ---
+// To add, remove, or modify match photos, edit the `matchPhotos` array below.
+// - `altText`: A description of the photo.
+// - `imageUrl`: The path to the match photo.
+//   Place match photos in the `public/images/matches/` directory.
+//   For example, if you have `match1.jpg` in `public/images/matches/`,
+//   then `imageUrl` should be `/images/matches/match1.jpg`.
+//   Use a placeholder like `/placeholder.svg?width=400&height=300` if you don't have an image yet.
+
+const matchPhotos = [
+    { altText: "Action shot from a recent match", imageUrl: "/placeholder.svg?width=400&height=300&text=Match+Photo+1" },
+    { altText: "Team celebrating a goal", imageUrl: "/placeholder.svg?width=400&height=300&text=Match+Photo+2" },
+    { altText: "Defensive play", imageUrl: "/placeholder.svg?width=400&height=300&text=Match+Photo+3" },
+    { altText: "Fans cheering", imageUrl: "/placeholder.svg?width=400&height=300&text=Match+Photo+4" },
+];
+---
+
+<section id="matches" class="py-12 bg-team-black">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-team-yellow mb-8">Match Highlights</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+            {matchPhotos.map(photo => (
+                    <div class="bg-gray-900 rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <img src={photo.imageUrl || "/placeholder.svg"} alt={photo.altText} class="w-full h-64 object-cover" />
+                        <div class="p-4">
+                            <p class="text-gray-300 text-sm">{photo.altText}</p>
+                        </div>
+                    </div>
+            ))}
+        </div>
+    </div>
+</section>
