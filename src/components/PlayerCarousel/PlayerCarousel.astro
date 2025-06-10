@@ -1,6 +1,6 @@
 ---
-import PlayerCarouselIsland from '../components/PlayerCarouselIsland.tsx';
-import { players } from '../data/players.ts';
+import PlayerCarouselIsland from './PlayerCarouselIsland.tsx';
+import { players } from '../../data/players.ts';
 ---
 
 <section id="players" class="py-12 bg-gray-900">
@@ -9,6 +9,7 @@ import { players } from '../data/players.ts';
 
         <!-- Carga e hidrata solo en cliente -->
         <PlayerCarouselIsland client:load players={players} />
+        <!--TODO: add modal for player details-->
 
         <p class="text-center text-gray-500 mt-4 text-sm">
             Haz scroll horizontal para ver todos los jugadores.

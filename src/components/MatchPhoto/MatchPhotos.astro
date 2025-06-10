@@ -1,0 +1,27 @@
+---
+import { matchPhotos } from '../../data/matchPhotos.ts';
+---
+
+<section id="matches" class="py-12 bg-team-black">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-team-yellow mb-8">Mejores Momentos</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+            {matchPhotos.map((photo, index) => (
+                    <a href={`/matches/index.astro?photo=${index}`} class="block">
+                        <div
+                                class="bg-gray-900 rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300"
+                        >
+                            <img
+                                    src={photo.imageUrl || '/placeholder.svg'}
+                                    alt={photo.altText}
+                                    class="w-full h-64 object-cover"
+                            />
+                            <div class="p-4">
+                                <p class="text-gray-300 text-sm">{photo.altText}</p>
+                            </div>
+                        </div>
+                    </a>
+            ))}
+        </div>
+    </div>
+</section>

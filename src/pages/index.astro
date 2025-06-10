@@ -1,13 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import PlayerCarousel from '../components/PlayerCarousel.astro';
-import MatchPhotos from '../components/MatchPhotos.astro';
+import PlayerCarousel from '../components/PlayerCarousel/PlayerCarousel.astro';
+import PreviewGallery from '../components/MatchPhoto/PreviewGallery.astro';
 import ResultsList from '../components/ResultsList.astro';
 import Footer from '../components/Footer.astro';
-
-// A hero section can be added here if desired.
-// For now, we go straight to the content.
 ---
 
 <Layout title="Segurola y Habana FC">
@@ -22,7 +19,7 @@ import Footer from '../components/Footer.astro';
 			</div>
 		</section>
 		<PlayerCarousel />
-		<MatchPhotos />
+		<PreviewGallery />
 		<ResultsList />
 	</main>
 	<Footer />

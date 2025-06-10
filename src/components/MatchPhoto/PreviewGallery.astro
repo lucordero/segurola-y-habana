@@ -1,0 +1,42 @@
+---
+import { matchPhotos } from '../../data/matchPhotos.ts';
+import ModalPhotoViewer from './ModalPhotoViewer.tsx';
+
+const previewPhotos = matchPhotos.slice(0, 4);
+const photoId = Astro.url.searchParams.get('photo');
+const initialIndex = photoId ? parseInt(photoId) : null;
+---
+
+<section id="matches" class="py-12 bg-team-black">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-team-yellow mb-8">Mejores Momentos</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+            {previewPhotos.map((photo, index) => (
+                    <a href="/matches" class="block group">
+                        <div class="bg-gray-900 rounded-lg shadow-xl overflow-hidden transform group-hover:scale-105 transition-transform duration-300 h-full flex flex-col">
+                            <img
+                                    src={photo.imageUrl}
+                                    alt={photo.altText}
+                                    class="w-full h-64 object-cover"
+                                    loading="lazy"
+                            />
+                            <div class="p-4 flex-grow">
+                                <h3 class="text-lg font-semibold text-team-yellow mb-1">{photo.altText}</h3>
+                            </div>
+                        </div>
+                    </a>
+            ))}
+        </div>
+        <div class="mt-8 text-center">
+            <a href="/matches" class="inline-block bg-team-yellow text-team-black font-bold px-6 py-3 rounded-lg shadow hover:bg-yellow-400 transition">Ver más</a>
+        </div>
+    </div>
+    {initialIndex !== null && (
+            <ModalPhotoViewer
+                    client:load
+                    photos={previewPhotos}
+                    initialIndex={initialIndex}
+                    onClose={() => window.location.href = '/'}
+            />
+    )}
+</section>
