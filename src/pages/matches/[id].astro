@@ -43,6 +43,7 @@ const photoId = Number(Astro.params.id);
                     <div class="mt-8 pt-6 border-t border-gray-700">
                         <h2 class="text-xl font-semibold text-team-yellow mb-4">Más Fotos</h2>
                         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <!-- TODO: fix to display related random photos, excluding the current one -->
                             {matchPhotos
                                 .filter(p => p.id !== photoId)
                                 .slice(0, 3)
