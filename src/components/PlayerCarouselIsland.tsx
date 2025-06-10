@@ -31,7 +31,7 @@ export default function PlayerCarouselIsland({ players }: Props) {
         const shuffled = shuffleArray(players);
         const timer = setTimeout(() => {
             setShuffledPlayers(shuffled);
-        }, 500);
+        }, 0);
         return () => clearTimeout(timer);
     }, [players]);
 
@@ -69,7 +69,7 @@ export default function PlayerCarouselIsland({ players }: Props) {
     return (
         <div
             ref={carouselRef}
-            className="carousel flex overflow-x-auto space-x-6 pb-4 snap-x snap-mandatory fade-in scroll-smooth"
+            className="carousel flex overflow-x-auto space-x-6 pb-4 snap-x snap-mandatory scroll-smooth"
         >
             {shuffledPlayers.map((player) => (
                 <div
