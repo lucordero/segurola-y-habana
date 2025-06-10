@@ -1,36 +1,17 @@
 ---
-// --- How to edit Player Data ---
-// To add, remove, or modify players, edit the `players` array below.
-// - `name`: The player's name.
-// - `position`: The player's position on the field.
-// - `imageUrl`: The path to the player's image.
-//   Place player images in the `public/images/players/` directory.
-//   For example, if you have `player1.jpg` in `public/images/players/`,
-//   then `imageUrl` should be `/images/players/player1.jpg`.
-//   Use a placeholder like `/placeholder.svg?width=200&height=250` if you don't have an image yet.
-
-const players = [
-    { name: "Player One", position: "Forward", imageUrl: "/placeholder.svg?width=200&height=250&text=Player+1" },
-    { name: "Player Two", position: "Midfielder", imageUrl: "/placeholder.svg?width=200&height=250&text=Player+2" },
-    { name: "Player Three", position: "Defender", imageUrl: "/placeholder.svg?width=200&height=250&text=Player+3" },
-    { name: "Player Four", position: "Goalkeeper", imageUrl: "/placeholder.svg?width=200&height=250&text=Player+4" },
-    { name: "Player Five", position: "Midfielder", imageUrl: "/placeholder.svg?width=200&height=250&text=Player+5" },
-    { name: "Player Six", position: "Forward", imageUrl: "/placeholder.svg?width=200&height=250&text=Player+6" },
-];
+import PlayerCarouselIsland from '../components/PlayerCarouselIsland.tsx';
+import { players } from '../data/players.ts';
 ---
 
 <section id="players" class="py-12 bg-gray-900">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center text-team-yellow mb-8">Our Squad</h2>
-        <div class="carousel flex overflow-x-auto space-x-6 pb-4 snap-x snap-mandatory">
-            {players.map(player => (
-                    <div class="flex-shrink-0 w-64 bg-team-black rounded-lg shadow-xl p-6 snap-center transform hover:scale-105 transition-transform duration-300">
-                        <img src={player.imageUrl || "/placeholder.svg"} alt={player.name} class="w-full h-48 object-cover rounded-md mb-4" />
-                        <h3 class="text-xl font-semibold text-team-yellow">{player.name}</h3>
-                        <p class="text-gray-400">{player.position}</p>
-                    </div>
-            ))}
-        </div>
-        <p class="text-center text-gray-500 mt-4 text-sm">Scroll horizontally to see all players.</p>
+        <h2 class="text-3xl font-bold text-center text-team-yellow mb-8">Equipo</h2>
+
+        <!-- Carga e hidrata solo en cliente -->
+        <PlayerCarouselIsland client:load players={players} />
+
+        <p class="text-center text-gray-500 mt-4 text-sm">
+            Haz scroll horizontal para ver todos los jugadores.
+        </p>
     </div>
 </section>
