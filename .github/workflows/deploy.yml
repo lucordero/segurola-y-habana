@@ -1,19 +1,15 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Ejecutar en push a la rama main
   push:
-    branches: [ main ]
-  # Permitir ejecución manual desde la pestaña Actions
+    branches: [ master ]
   workflow_dispatch:
 
-# Permisos necesarios para GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Permitir solo un deployment concurrente
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -29,18 +25,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'pnpm'
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v2
         with:
           version: 10
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
 
-      - name: Build with Astro
-        run: pnpm run build
+      - name: Build
+        run: pnpm build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
