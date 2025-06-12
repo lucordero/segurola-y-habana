@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   # Ejecutar en push a la rama main
   push:
-    branches: [ master ]
+    branches: [ main ]
   # Permitir ejecución manual desde la pestaña Actions
   workflow_dispatch:
 
@@ -29,13 +29,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
+          cache: 'pnpm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Build with Astro
-        run: npm run build
+        run: pnpm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
