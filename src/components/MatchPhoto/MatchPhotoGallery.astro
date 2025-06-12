@@ -1,26 +1,49 @@
 ---
 import { matchPhotos } from '../../data/matchPhotos.ts';
----
+import { Modal, ModalBody, ModalFooter, Button } from 'free-astro-components';
 
-<section id="matches" class="py-12 bg-team-black">
+---
+<!--TODO: hacer una galeria por partido, eligiendo solo 12 fotos, cambiar matchPhotos.ts, agregar carpetas para cada partido, cambiar GalleryPreview-->
+<section id="matches" class="py-12 bg-team-black ">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center text-team-yellow mb-8">Mejores Momentos</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {matchPhotos.map((photo) => (
-                    <a href={`/matches/${photo.id}`} class="block group">
-                        <div class="bg-gray-900 rounded-lg shadow-xl overflow-hidden transform group-hover:scale-105 transition-transform duration-300 h-full flex flex-col">
+        <div class="flex flex-wrap gap-3 mb-5 h-dvh px-4 justify-center items-center">
+            {
+                matchPhotos.length === 0 ? (
+                        <p class="text-gray-400">No hay fotos de partidos disponibles.</p>
+                ) : (
+                    matchPhotos.map((photo) => (
+                        <a data-modal-trigger={`modal-${photo.id}`} class="inline-block mb-3">
                             <img
                                     src={photo.imageUrl}
-                                    alt={photo.altText}
-                                    class="w-full h-64 object-cover"
+                                    alt=""
                                     loading="lazy"
+                                    class="rounded transform hover:scale-105 transition-transform duration-300 max-w-80"
                             />
-                            <div class="p-4 flex-grow">
-                                <h3 class="text-lg font-semibold text-team-yellow mb-1">{photo.altText}</h3>
-                            </div>
-                        </div>
-                    </a>
-            ))}
+                        </a>
+                        <Modal id={`modal-${photo.id}`} class="custom-modal m-auto -z-20" size="4xl">
+                            <ModalBody>
+                                <img
+                                        src={photo.imageUrl}
+                                        alt=""
+                                        class="h-dvh py-4 px-2 rounded-lg object-contain"
+                                />
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button label="Cerrar" data-modal-close />
+                            </ModalFooter>
+                        </Modal>
+                    ))
+                )
+            }
         </div>
     </div>
 </section>
+
+<style>
+    .custom-modal {
+        --ac-modal-border-radius: 0;
+        --ac-modal-background-color: #1c398e;
+        --ac-modal-backdrop-color: #1c398e;
+    }
+</style>

@@ -34,7 +34,7 @@ export const players: Player[] = [
         position: 'Mediocampista',
         age: calculateAge('1995/07/17'),
         number: 8,
-        imageUrl: 'placeholder.png',
+        imageUrl: 'https://placehold.co/300x400?text=Jugador+sin+imagen',
     },
     {
         id: 2,
@@ -43,7 +43,7 @@ export const players: Player[] = [
         position: 'Defensor',
         age: calculateAge('1997/12/08'),
         number: 42,
-        imageUrl: 'placeholder.png',
+        imageUrl: 'https://placehold.co/300x400?text=Jugador+sin+imagen',
     },
     {
         id: 3,
@@ -52,7 +52,7 @@ export const players: Player[] = [
         position: 'Mediocampista',
         age: calculateAge('1996/09/06'),
         number: 9,
-        imageUrl: 'placeholder.png',
+        imageUrl: 'https://placehold.co/300x400?text=Jugador+sin+imagen',
     },
     {
         id: 4,
@@ -61,7 +61,7 @@ export const players: Player[] = [
         position: 'Arquero',
         age: calculateAge('1999/03/21'),
         number: 1,
-        imageUrl: 'placeholder.png',
+        imageUrl: 'https://placehold.co/300x400?text=Jugador+sin+imagen',
     },
     {
         id: 5,
@@ -70,7 +70,7 @@ export const players: Player[] = [
         position: 'Defensor',
         age: calculateAge('1994/09/20'),
         number: 20,
-        imageUrl: 'placeholder.png',
+        imageUrl: 'https://placehold.co/300x400?text=Jugador+sin+imagen',
     },
     {
         id: 6,
@@ -79,7 +79,7 @@ export const players: Player[] = [
         position: 'Mediocampista',
         age: calculateAge('1998/05/20'),
         number: 10,
-        imageUrl: 'placeholder.png',
+        imageUrl: 'https://placehold.co/300x400?text=Jugador+sin+imagen',
     },
     {
         id: 7,
@@ -88,7 +88,7 @@ export const players: Player[] = [
         position: 'Mediocampista',
         age: calculateAge('1992/08/27'),
         number: 16,
-        imageUrl: 'placeholder.png',
+        imageUrl: 'https://placehold.co/300x400?text=Jugador+sin+imagen',
     },
     {
         id: 8,
@@ -97,7 +97,7 @@ export const players: Player[] = [
         position: 'Mediocampista',
         age: calculateAge('1997/05/08'),
         number: 4,
-        imageUrl: 'placeholder.png',
+        imageUrl: 'https://placehold.co/300x400?text=Jugador+sin+imagen',
     },
     {
         id: 9,
@@ -106,7 +106,7 @@ export const players: Player[] = [
         position: 'Defensor',
         age: calculateAge('1996/07/02'),
         number: 6,
-        imageUrl: 'placeholder.png',
+        imageUrl: 'https://placehold.co/300x400?text=Jugador+sin+imagen',
     },
     {
         id: 10,
@@ -115,7 +115,7 @@ export const players: Player[] = [
         position: 'Delantero',
         age: calculateAge('2004/06/10'),
         number: 7,
-        imageUrl: 'placeholder.png',
+        imageUrl: 'https://placehold.co/300x400?text=Jugador+sin+imagen',
     },
     {
         id: 11,
@@ -124,7 +124,7 @@ export const players: Player[] = [
         position: 'Delantero',
         age: calculateAge('1997/10/25'),
         number: 11,
-        imageUrl: 'placeholder.png',
+        imageUrl: 'https://placehold.co/300x400?text=Jugador+sin+imagen',
     },
     {
         id: 12,
@@ -133,7 +133,7 @@ export const players: Player[] = [
         position: 'Mediocampista',
         age: calculateAge('1997/09/18'),
         number: 37,
-        imageUrl: 'placeholder.png',
+        imageUrl: 'https://placehold.co/300x400?text=Jugador+sin+imagen',
     },
     {
         id: 13,
@@ -142,7 +142,7 @@ export const players: Player[] = [
         position: 'Defensor',
         age: calculateAge('1995/09/11'),
         number: 5,
-        imageUrl: 'placeholder.png',
+        imageUrl: 'https://placehold.co/300x400?text=Jugador+sin+imagen',
     },
     {
         id: 14,
@@ -151,7 +151,7 @@ export const players: Player[] = [
         position: 'Mediocampista',
         age: calculateAge('1997/08/29'),
         number: 87,
-        imageUrl: 'placeholder.png',
+        imageUrl: 'https://placehold.co/300x400?text=Jugador+sin+imagen',
     },
     {
         id: 15,
@@ -160,6 +160,6 @@ export const players: Player[] = [
         position: 'Defensor',
         age: calculateAge('1997/07/22'),
         number: 2,
-        imageUrl: 'placeholder.png',
+        imageUrl: 'https://placehold.co/300x400?text=Jugador+sin+imagen',
     },
 ];

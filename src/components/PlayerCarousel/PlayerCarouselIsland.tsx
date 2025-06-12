@@ -41,7 +41,7 @@ export default function PlayerCarouselIsland({ players }: Props) {
 
         const carousel = carouselRef.current;
         const scrollAmount = 268; // pixels to scroll each step
-        const interval = 2000; // time between scrolls (ms)
+        const interval = 3000; // time between scrolls (ms)
 
         const autoScroll = setInterval(() => {
             if (!carousel) return;
@@ -74,12 +74,12 @@ export default function PlayerCarouselIsland({ players }: Props) {
             {shuffledPlayers.map((player) => (
                 <div
                     key={player.id}
-                    className="flex-shrink-0 w-64 bg-team-black rounded-lg shadow-xl p-6 snap-center transform hover:scale-105 transition-transform duration-300"
+                    className="flex-shrink-0 w-52 bg-team-black rounded-lg shadow-xl p-6 snap-center transform hover:scale-105 transition-transform duration-300"
                 >
                     <img
-                        src={player.imageUrl || '/placeholder.svg'}
+                        src={player.imageUrl || 'https://placehold.co/300x400?text=Jugador+sin+imagen'}
                         alt={player.name}
-                        className="w-full h-48 object-cover rounded-md mb-4"
+                        className="w-full h-48 aspect-2/3 rounded-md mb-4"
                     />
                     <h3 className="text-xl font-semibold text-team-yellow">
                         {player.name} #{player.number}

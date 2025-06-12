@@ -1,6 +1,6 @@
 # Página Web de Segurola y Habana FC
 
-Este repositorio contiene el código fuente de la página de aterrizaje (landing page) para el equipo de fútbol amateur "Segurola y Habana". La página está construida con [Astro](https://astro.build/) y estilizada con [Tailwind CSS](https://tailwindcss.com/).
+Este repositorio contiene el código fuente de la página de aterrizaje (landing page) para el equipo de fútbol amateur "Segurola y Habana". La página está construida con [Astro](https://astro.build/) y estilizada con [Tailwind CSS](https://tailwindcss.com/), también utilizando ocasionalmente [Preact](https://preactjs.com/).
 
 ## Características
 
@@ -16,27 +16,45 @@ Este repositorio contiene el código fuente de la página de aterrizaje (landing
 ```
 /
 ├── public/
-│   ├── images/                 # Directorio para todas las imágenes
-│   │   ├── logo-syh.png        # Logo principal del equipo
-│   │   ├── players/            # Imágenes de los jugadores
-│   │   └── matches/            # Fotos de los partidos
+│   ├── images/                 # Directorio para imágenes generales
+│   ├── matches/                # Recursos específicos de partidos
+│   ├── players/                # Imágenes de jugadores
+│   ├── image0.jpg              # Imagen de ejemplo
+│   ├── logo-syl.svg            # Logo del equipo
 │   └── favicon.svg             # Favicon del sitio
 ├── src/
-│   ├── components/             # Componentes reutilizables de Astro
-│   │   ├── Header.astro
-│   │   ├── PlayerCarousel.astro
+│   ├── assets/
+│   │   ├── astro.svg           # Logo del framework Astro
+│   │   ├── background.svg      # Imagen de fondo
+│   │   └── placeholder.svg     # Imagen de reemplazo temporal
+│   ├── components/
+│   │   ├── MatchPhoto/         # Componentes de fotos de partidos
+│   │   ├── MatchPhotoGallery.astro
 │   │   ├── MatchPhotos.astro
-│   │   ├── ResultsList.astro
-│   │   └── Footer.astro
-│   ├── layouts/                # Plantillas base para las páginas
-│   │   └── Layout.astro
-│   ├── pages/                  # Páginas del sitio
-│   │   └── index.astro         # Página principal
-│   └── env.d.ts                # Definiciones de tipos para Astro
+│   │   ├── ModalPhotolviewer.tex
+│   │   ├── PreviewGallery.astro
+│   │   ├── PlayerCarousel/     # Componentes del carrusel de jugadores
+│   │   │   ├── PlayerCarousel.astro
+│   │   │   └── PlayerCarouselIsland.tex
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   └── ResultsList.astro
+│   ├── data/
+│   │   ├── matchPhotos.js      # Datos de fotos de partidos
+│   │   └── players.js          # Datos de jugadores
+│   ├── layouts/
+│   │   └── Layout.astro        # Plantilla principal de diseño
+│   ├── pages/
+│   │   ├── matches/
+│   │   │   ├── [id].astro      # Página dinámica de detalle de partido
+│   │   │   └── index.astro     # Listado de partidos
+│   │   └── index.astro         # Página de inicio
+│   └── styles/
+│       └── global.css          # Estilos globales
 ├── astro.config.mjs            # Configuración de Astro
 ├── tailwind.config.mjs         # Configuración de Tailwind CSS
 ├── package.json
-└── README.md                   # Este archivo
+└── README.md
 ```
 
 ## Requisitos Previos
@@ -48,8 +66,8 @@ Este repositorio contiene el código fuente de la página de aterrizaje (landing
 
 1.  Clona este repositorio:
     ```bash
-    git clone https://URL_DEL_REPOSITORIO_AQUI
-    cd NOMBRE_DEL_DIRECTORIO_DEL_PROYECTO
+    git clone https://github.com/lucordero/segurola-y-habana
+    cd segurola-y-habana
     ```
 
 2.  Instala las dependencias:
@@ -124,17 +142,8 @@ Los archivos generados se encontrarán en la carpeta `dist/`. Estos son los arch
 
 *   **Astro:** Framework para construir sitios web rápidos y orientados al contenido.
 *   **Tailwind CSS:** Framework CSS de utilidad primero para un diseño rápido y personalizado.
+*   **Preact:** Utilizado como motor de renderizado para los componentes de Astro.
 
 ---
 
 ¡Vamos Segurola y Habana!
-```
-
-**Instrucciones Adicionales:**
-
-1.  **URL del Repositorio:** No olvides reemplazar `https://URL_DEL_REPOSITORIO_AQUI` con la URL real de tu repositorio Git.
-2.  **Nombre del Directorio:** Cambia `NOMBRE_DEL_DIRECTORIO_DEL_PROYECTO` por el nombre de la carpeta que se crea al clonar el repositorio.
-3.  Guarda este contenido como `README.md` en la raíz de tu proyecto.
-
-Este README debería proporcionar una buena guía para cualquiera que quiera entender, configurar o contribuir al proyecto.
-
