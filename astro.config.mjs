@@ -9,7 +9,7 @@ import preact from '@astrojs/preact';
 export default defineConfig({
   // Configuración para GitHub Pages
   site: 'https://lucordero.github.io',
-  base: '/',
+  base: '/segurola-y-habana',
   output: 'static',
 
   vite: {
