@@ -1,10 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import PlayerCarousel from '../components/PlayerCarousel/PlayerCarousel.astro';
-import PreviewGallery from '../components/MatchPhoto/PreviewGallery.astro';
-import ResultsList from '../components/ResultsList.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '@layouts/Layout.astro';
+import Header from '@components/Header.astro';
+import PlayerCarousel from '@components/PlayerCarousel/PlayerCarousel.astro';
+import PreviewGallery from '@components/MatchPhoto/PreviewGallery.astro';
+import ResultsList from '@components/ResultsList.astro';
+import Footer from '@components/Footer.astro';
+
+import { Image } from 'astro:assets';
+import firstTeamPhoto from '/public/images/image0.jpeg'
 ---
 
 <Layout title="Segurola y Habana FC">
@@ -12,6 +15,7 @@ import Footer from '../components/Footer.astro';
 	<main>
 		<section class="bg-team-black text-white py-10 text-center">
 			<div class="container mx-auto px-4">
+				<!--<Image src={firstTeamPhoto} alt="Capitan mirando la copa." width='150' class='flex '/>-->
 				<h2 class="text-4xl md:text-5xl font-bold text-team-yellow mb-4">¡Vamos Segurola y Habana!</h2>
 				<p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
 					Desde la capital de la Cumbia y el Liso, con más pasión que habilidad.
